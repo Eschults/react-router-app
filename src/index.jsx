@@ -7,6 +7,7 @@ import reduxPromise from 'redux-promise';
 import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { reducer as formReducer } from 'redux-form';
+import { createHistory as history } from 'history';
 
 // internal modules
 import postsReducer from './reducers/posts_reducer';
@@ -26,7 +27,7 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 // render an instance of the component in the DOM
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
-    <Router>
+    <Router history={history}>
       <div>
         <Switch>
           <Route path="/" exact component={PostsIndex} />

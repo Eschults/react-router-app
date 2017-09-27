@@ -9,8 +9,6 @@ export default function postsReducer(state = {}, action) {
       return {
         [action.payload.id]: action.payload
       };
-    case POST_CREATED:
-      return Object.assign({}, state, { [action.payload.id]: action.payload });
     default:
       return state;
   }

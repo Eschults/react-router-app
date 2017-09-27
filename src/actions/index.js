@@ -22,13 +22,19 @@ export function fetchPost(id) {
   };
 }
 
-export function createPost(body) {
-  const promise = fetch(`${ROOT_URL}/${id}?key=${API_KEY}`, {
+export function createPost(body, callback) {
+  const request = fetch(`${ROOT_URL}?key=${API_KEY}`, {
     method: 'POST',
-    body
-  }).then(response => response.json());
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(body)
+  }).then(response => response.json())
+    .then(() => callback());
 
   return {
-    type: POST_CREATED
-  }
+    type: POST_CREATED,
+    payload: request
+  };
 }
