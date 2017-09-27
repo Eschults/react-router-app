@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Link } from 'react-router-dom';
 import { fetchPost } from '../actions/index';
 
-class Post extends Component {
+class PostsShow extends Component {
   componentDidMount() {
     this.props.fetchPost(this.props.match.params.id);
   }
@@ -17,8 +17,11 @@ class Post extends Component {
     }
 
     return (
-      <div className="post">
-        <p>{post.content}</p>
+      <div>
+        <div className="post-item">
+          <h3>{post.title}</h3>
+          <p>{post.content}</p>
+        </div>
         <Link to="/">
           Back
         </Link>
@@ -35,4 +38,4 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchPost }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Post);
+export default connect(mapStateToProps, mapDispatchToProps)(PostsShow);

@@ -12,8 +12,8 @@ import { createHistory as history } from 'history';
 // internal modules
 import postsReducer from './reducers/posts_reducer';
 import PostsIndex from './containers/posts_index';
-import Post from './containers/post';
-import PostForm from './containers/post_form';
+import PostsShow from './containers/posts_show';
+import PostsNew from './containers/posts_new';
 import '../assets/stylesheets/application.scss';
 
 // State and reducers
@@ -28,11 +28,11 @@ const middlewares = applyMiddleware(reduxPromise, logger);
 ReactDOM.render(
   <Provider store={createStore(reducers, {}, middlewares)}>
     <Router history={history}>
-      <div>
+      <div className="thin-container">
         <Switch>
           <Route path="/" exact component={PostsIndex} />
-          <Route path="/posts/new" exact component={PostForm} />
-          <Route path="/posts/:id" component={Post} />
+          <Route path="/posts/new" exact component={PostsNew} />
+          <Route path="/posts/:id" component={PostsShow} />
         </Switch>
       </div>
     </Router>

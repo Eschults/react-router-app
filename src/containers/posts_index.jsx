@@ -14,7 +14,10 @@ class PostsIndex extends Component {
     return _.map(this.props.posts, (post) => {
       return (
         <Link to={`/posts/${post.id}`} key={post.id}>
-          {post.title}
+          <div className="post-item">
+            <h3>{post.title}</h3>
+            <p>{post.content}</p>
+          </div>
         </Link>
       );
     });
@@ -22,12 +25,11 @@ class PostsIndex extends Component {
 
   render() {
     return (
-      <div className="index">
-
-        <Link className="btn btn-primary" to="/posts/new">
-          Write Post
+      <div>
+        <Link className="btn btn-primary btn-cta" to="/posts/new">
+          Let's write a post!
         </Link>
-        {this.renderPosts()}
+        {this.renderPosts().reverse()}
       </div>
     );
   }
