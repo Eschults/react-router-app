@@ -26,9 +26,12 @@ class PostsIndex extends Component {
   render() {
     return (
       <div>
-        <Link className="btn btn-primary btn-cta" to="/posts/new">
-          Let's write a post!
-        </Link>
+        <div className="first-row">
+          <h3>Blog</h3>
+          <Link className="btn btn-primary btn-cta" to="/posts/new">
+            Let's write a post!
+          </Link>
+        </div>
         {this.renderPosts().reverse()}
       </div>
     );

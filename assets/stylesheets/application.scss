@@ -21,10 +21,11 @@ body {
   background-color: white;
   margin-bottom: 10px;
   box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-  h3 {
-    margin-top: 0;
-    font-family: 'Yeseva One';
-  }
+}
+
+h3 {
+  margin-top: 0;
+  font-family: 'Yeseva One';
 }
 
 a,
@@ -80,3 +81,14 @@ form a {
   margin-left: 10px;
 }
 
+.first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #ACACAC;
+  margin-bottom: 10px;
+  h3 {
+    margin-bottom: 0;
+  }
+}

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_POSTS, FETCH_POST, POST_CREATED } from '../actions';
+import { FETCH_POSTS, FETCH_POST } from '../actions';
 
 export default function postsReducer(state = {}, action) {
   switch (action.type) {

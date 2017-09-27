@@ -37,7 +37,7 @@
     "redux-promise": "^0.5.3"
   },
   "scripts": {
-    "start": "webpack-dev-server --history-api-fallback",
+    "start": "webpack-dev-server",
     "deploy": "webpack -p && gh-pages -d dist"
   }
 }

@@ -7,6 +7,7 @@ module.exports = {
     filename: 'bundle.js'
   },
   devtool: 'sourcemap',
+  devServer: { historyApiFallback: true },
   module: {
     rules: [
       {
@@ -18,14 +19,9 @@ module.exports = {
         test: /\.s?css$/,
         exclude: /node_modules/,
         loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
-      },
-      {
-        test: /\.html$/,
-        loader: 'html-loader'
-      },
+      }
     ]
   },
-  devServer: { historyApiFallback: true },
   resolve: {
     extensions: [ '.js', '.jsx' ]
   }
