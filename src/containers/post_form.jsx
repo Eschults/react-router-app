@@ -1,16 +1,28 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import { createPost } from '../actions';
+import { Field, reduxForm } from 'redux-form';
 
 class PostForm extends Component {
+  renderTitleField(field) {
+    return (
+      <div>
+        <input
+          type="text"
+          {...field.input}
+        />
+      </div>
+    );
+  }
+
   render() {
-    return <input />;
+    return (
+      <form>
+        <Field
+          name="title"
+          component={this.renderTitleField}
+        />
+      </form>
+    );
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ createPost }, dispatch);
-}
-
-export default connect(null, mapDispatchToProps)(PostForm);
+export default reduxForm({ form: 'PostForm' })(PostForm);
