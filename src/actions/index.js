@@ -2,7 +2,7 @@ export const FETCH_POSTS = 'FETCH_POSTS';
 export const FETCH_POST = 'FETCH_POST';
 export const POST_CREATED = 'POST_CREATED';
 const ROOT_URL = 'http://reduxblog.herokuapp.com/api/posts';
-const API_KEY = 'LEWAGON-REACT';
+const API_KEY = 'LEWAGON-BLOG';
 
 export function fetchPosts() {
   const promise = fetch(`${ROOT_URL}?key=${API_KEY}`).then(response => response.json());
